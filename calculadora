@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <div>
+        <h3>Selecione um operador</h3>
+    <select id="operator">
+        <option value="soma">Soma</option>
+        <option value="sub">Subtração</option>
+        <option value="mult">Multiplicação</option>
+        <option value="div">Divisão</option>
+    </select>
+</div>
+<div>
+    Primeiro número<input type="number" id="num1"><br>
+    Segundo número<input type="number" id="num2">
+</div>
+    <button onclick="calcular()">Calcular</button>
+    <div id="result"></div>
+
+    <script>
+        function calcular() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var operator = document.getElementById("operator").value;
+            var result;
+
+            if (operator === "soma") {
+                result = num1 + num2;
+            } else if (operator === "sub") {
+                result = num1 - num2;
+            } else if (operator === "mult") {
+                result = num1 * num2;
+            } else if (operator === "div") {
+                result = num1 / num2;
+            }
+
+            document.getElementById("result").innerHTML =( `Seu resultdado é: ${result}` );
+        }
+    </script>
+</body>
+
+</html>
